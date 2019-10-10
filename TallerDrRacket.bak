@@ -1,0 +1,43 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname TallerDrRacket) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;Factorial
+(define (Fac n)
+  (cond ((= n 0)1)
+        ((= n 1 )1)
+        ((= n 2 )2)
+        (else (auxFac n))))
+
+(define (auxFac n)
+  (* n (Fac(- n 1))))
+
+;Fibonacci
+
+(define (Fib n)
+  (cond ((= n 0)0)
+        ((= n 1 )1)
+        (else (auxFib n))))
+
+(define (auxFib n)
+  (+ (Fib (- n 1 ))(Fib (- n 2))))
+
+
+;Elemento en una lista
+(define (miembro lista ele)
+  (cond ((null? lista)#f)
+        ((equal? (car lista) ele)#t)
+  (else (miembro (cdr lista) ele))))
+
+  
+;Eliminar un elemento de una lista?
+(define (eliminar ele lista)
+  (cond ((null? lista)#f)
+        ((equal? (car lista) ele)#t)
+  (else (miembro (cdr lista) ele))))
+
+
+;Quicksort
+
+
+
+
