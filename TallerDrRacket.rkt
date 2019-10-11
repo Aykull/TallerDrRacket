@@ -71,9 +71,14 @@
 
  
 ;Eliminar de un arbol binario
-(define (eliminarArbol nodo arbol)
-  (cond ((null? arbol)'())
-        (else (eliminarAux nodo arbol))))
+(define (elArbol nodo arbol)
+  (cons ((null? arbol) '())
+        (else ((elArbolAux nodo arbol '())))))
+
+(define (elArbolAux nodo arbol resultado)
+  (cons ((equal? nodo (car arbol)) (append(eliminarAux nodo arbol));encontrado
+        ((< nodo (car arbol))(elArbol nodo (cadr arbol)));se le pasa el lado izq
+        (else(elArbol nodo (caddr arbol)))));se le pasa el lado der
 
 (define (HijoIzq raiz)
   (cond ((equal? raiz '())#f)
@@ -105,6 +110,13 @@
 (define (casoTres nodo arbol)
   (cond (())))
 
+
+
+
+
+
+(define (eliminarA nodo arbol)
+  
 
 ;Rutas anchura primero
 ;(define (Panchura grafo inicio))
